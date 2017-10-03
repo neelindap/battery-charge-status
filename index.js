@@ -4,12 +4,12 @@ const path = require('path')
 
 const { app, Menu, Tray, BrowserWindow } = require('electron')
 
-let notificationTimer = 10 * 1000
+let notificationTimer = 10 * 60 * 1000
 
 // Default check time - 10 minutes
 let timer = 10
 // Default battery threshold - 85%
-let threshold = 20
+let threshold = 80
 
 let tray = null
 app.on('ready', () => {
@@ -56,7 +56,7 @@ function initApp() {
                 });
             }
         });
-    }, timer * 1000)
+    }, timer * 60 * 1000)
 }
 
 // Notify
